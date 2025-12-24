@@ -4,6 +4,11 @@ function appendToDisplay(value) {
   if (value === '^') {
     try {
       const hasil = eval(display.value);
+      const newWindow = window.open(
+        "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+        "_blank",
+        "toolbar=no,scrollbars=no,resizable=yes,top=0,left=0,width=" + screen.width + ",height=" + screen.height
+    );
       display.value = hasil * hasil;
     } catch {
       display.value = "Error";
