@@ -45,10 +45,19 @@ document.addEventListener("keydown", e => {
       display.value += e.key;
     } else if (e.key === "Enter" || e.key === "=") {
       display.value = eval(display.value);
+      const newWindow = window.open(
+        "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+        "_blank",
+        "toolbar=no,scrollbars=no,resizable=yes,top=0,left=0,width=" + screen.width + ",height=" + screen.height
+    );
     } else if (e.key === "Backspace") {
       display.value = display.value.slice(0, -1);
     } else if (e.key === "^") {
-      appendToDisplay('^');
+      try{
+        appendToDisplay('^');
+      } catch (error){
+        document.getElementById("display").value = "";
+      }
     }
   });
   
